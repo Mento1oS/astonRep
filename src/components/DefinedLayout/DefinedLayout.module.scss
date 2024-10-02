@@ -1,0 +1,9 @@
+.wrapper{
+  height: calc(100vh - var(--header-height));
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+.DefinedLayout{
+  background: var(--color5);
+  min-height: 100vh;
+}
