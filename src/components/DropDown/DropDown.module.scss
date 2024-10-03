@@ -1,8 +1,16 @@
 .DropDown{
-
+  width: var(--dropDown-width);
+  font-size: var(--dropdown-fz);
+  background: var(--color6);
+  box-shadow: 0px 0px 2px #5A5A5A;
+  border-radius: 12px;
 }
 .container{
-
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px;
+  gap: 8px;
 }
 .archivedDD{
 
@@ -11,5 +19,7 @@
 
 }
 .option{
-
+  padding: 8px 12px;
+  cursor: pointer;
 }
+

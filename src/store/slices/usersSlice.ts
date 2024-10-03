@@ -6,13 +6,40 @@ type InitialState = {
     archivedUsers: User[];
     isActiveUsersDropDownOpen: boolean[];
     isArchivedUsersDropDownOpen: boolean[];
+    dummies: Map<number, User>;
+    currentUser: User;
+    hidden: Set<number>;
 };
 
 const initialState: InitialState = {
     users: [],
     archivedUsers: [],
     isActiveUsersDropDownOpen: [],
-    isArchivedUsersDropDownOpen: []
+    isArchivedUsersDropDownOpen: [],
+    dummies: new Map(),
+    currentUser: {
+        id: NaN,
+        name: '',
+        email: '',
+        address: {
+            street: '',
+            suite: '',
+            city: '',
+            zipcode: '',
+            geo: {
+                lat: '',
+                lng: ''
+            }
+        },
+        phone: '',
+        website: '',
+        company: {
+            name: '',
+            catchPhrase: '',
+            bs: ''
+        }
+    },
+    hidden: new Set(),
 };
 const usersSlice = createSlice({
     name: 'users',
@@ -30,6 +57,15 @@ const usersSlice = createSlice({
         setIsArchivedDropDownOpen(state, action: PayloadAction<boolean[]>) {
             state.isArchivedUsersDropDownOpen = action.payload;
         },
+        setDummies(state, action: PayloadAction<Map<number, User>>) {
+            state.dummies = action.payload;
+        },
+        setCurrentUser(state, action: PayloadAction<User>) {
+            state.currentUser = action.payload;
+        },
+        setHidden(state, action: PayloadAction<Set<number>>) {
+            state.hidden = action.payload;
+        },
     },
 });
 
@@ -37,7 +73,10 @@ export const {
     setUsers,
     setArchivedUsers,
     setIsActiveDropDownOpen,
-    setIsArchivedDropDownOpen
+    setIsArchivedDropDownOpen,
+    setDummies,
+    setCurrentUser,
+    setHidden
 } = usersSlice.actions;
 
 export default usersSlice.reducer;

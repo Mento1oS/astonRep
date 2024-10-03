@@ -14,7 +14,7 @@ const ArchivedUsers = ({className}: ArchivedUsersProps) => {
             <div className={cls.users}>
                 {archivedUsers.map((elem, index) => {
                     if(!elem) return;
-                    return <UserCard isArchived={true} key={elem.id} user={elem} index={index} className={'archived'} picture={'./greyHuman.jpeg'}/>
+                    return <UserCard isArchived={true} key={elem.id} user={elem} index={index} className={'archived'} picture={'./greyHuman.png'}/>
                 })}
             </div>
         </div>

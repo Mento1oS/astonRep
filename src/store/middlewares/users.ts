@@ -6,8 +6,8 @@ export const usersApi = createApi({
     baseQuery: fetchBaseQuery({baseUrl: 'https://jsonplaceholder.typicode.com/users'}),
     endpoints: (build) => ({
         getAllUsers: build.query({
-            query: (archivedArray) => ({
-                url: `?_limit=${6 + archivedArray.length}`,
+            query: (sum) => ({
+                url: `?_limit=${6 + sum}`,
                 headers: {'content-type': 'application/json'},
             }),
             providesTags: (result) =>
