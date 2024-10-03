@@ -2,6 +2,7 @@
   "name": "aston",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
     "@types/node": "^16.18.112",
