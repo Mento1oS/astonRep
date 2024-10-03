@@ -1,7 +1,7 @@
 import cls from './ProfilePage.module.scss'
-import {LeftFormPart} from "../LeftFormPart/LeftFormPart";
 import {ProfileForm} from "../ProfileForm/ProfileForm";
 import {Link} from "react-router-dom";
+import {useAppSelector} from "../../lib/hooks";
 
 interface ProfilePageProps {
     className?: string;

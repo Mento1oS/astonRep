@@ -38,14 +38,14 @@ export const UserCard = ({className, user, picture, index, isArchived}: UserCard
                     <div className={cls.user}>
                         <div className={cls.top}>
                             <div className={cls.name}>{user.name}</div>
-                            <div className={cls.options}>
-                                <img onClick={toggleDropDown} src="./Vector.png" alt="dropdownCaller"/>
+                            <button className={cls.options}>
+                                <img onClick={toggleDropDown} src="./Vector.svg" alt="dropdownCaller"/>
                                 <div
                                     className={`${cls.dropDown__container} ${(isArchived && isArchivedUsersDropDownOpen[index] ||
                                         !isArchived && isActiveUsersDropDownOpen[index]) ? cls.open : ''}`}>
                                     <DropDown index={index} id={user.id} isArchived={isArchived}/>
                                 </div>
-                            </div>
+                            </button>
                         </div>
                         <div className={cls.bottom}>
                             <div

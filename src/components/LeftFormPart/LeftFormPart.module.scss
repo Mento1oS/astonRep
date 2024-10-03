@@ -1,0 +1,31 @@
+.LeftFormPart{
+  width: 360px;
+  background: var(--color6);
+  border-radius: 16px;
+}
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+.picture__block{
+  img{
+    width: 280px;
+    height: 485px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  margin-bottom: 40px;;
+}
+.metadata{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.header{
+  border-bottom: var(--color4) 1px solid;
+  padding-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+}

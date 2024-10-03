@@ -17,7 +17,8 @@ export const DefinedLayout = ({className}: DefinedLayoutProps) => {
     const isArchivedUsersDropDownOpen = useAppSelector(state => state.users.isArchivedUsersDropDownOpen);
     const filteredUsers = useAppSelector(state => state.users.users);
     const isActiveUsersDropDownOpen = useAppSelector(state => state.users.isActiveUsersDropDownOpen);
-    const hidden = useAppSelector(state=>state.users.hidden);
+    const hidden = useAppSelector(state => state.users.hidden);
+    const dummies = useAppSelector(state => state.users.dummies);
     const [getUsers, {
         data: allUsers,
         isSuccess: isUsersObtained
@@ -26,11 +27,16 @@ export const DefinedLayout = ({className}: DefinedLayoutProps) => {
         const sum = archivedUsers.length + hidden.size;
         await getUsers(sum)
             .unwrap()
-            .then((data: User[]) => dispatch(setUsers(data.filter(user => !hidden.has(user.id) && archivedUsers.every(arch => user.id !== arch.id)))));
+            .then((data: User[]) => {
+                const workedOutData = data
+                    .filter(user => !hidden.has(user.id) && archivedUsers.every(arch => user.id !== arch.id))
+                    .map(elem => dummies.has(elem.id) ? dummies.get(elem.id)! : elem);
+                dispatch(setUsers(workedOutData));
+            });
     }
     useEffect(() => {
         obtainUsers();
-    }, [archivedUsers.length, filteredUsers.length]);
+    }, [archivedUsers.length, filteredUsers.length, dummies.size]);
     useEffect(() => {
         dispatch(setIsActiveDropDownOpen(new Array(filteredUsers.length).fill(false)));
     }, [archivedUsers.length, isUsersObtained, filteredUsers.length]);
