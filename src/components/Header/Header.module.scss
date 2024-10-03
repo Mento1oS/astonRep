@@ -1,28 +1,64 @@
-.Header{
+.Header {
   height: var(--header-height);
   background: var(--color6);
 }
-.logo{
 
+.wrapper {
+  margin: 0 auto;
+  max-width: var(--container-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
-.actions{
 
+.logo {
+  cursor: pointer;
 }
-.icon{
-  &__heart{
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 2px;
+}
+
+.icon {
+  &__heart {
+    cursor: pointer;
   }
-  &__bell{
 
+  &__bell {
+    cursor: pointer;
   }
 }
-.person{
 
-  &__photo{
+.person {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 8px;
 
+  &__photo {
+    cursor: pointer;
+
+    img {
+      height: var(--person-pic-size);
+      width: var(--person-pic-size);
+      object-fit: cover;
+      border-radius: 50%;
+    }
   }
 
-  &__name{
-
+  &__name {
+    cursor: pointer;
+    color: var(--color2);
   }
 }

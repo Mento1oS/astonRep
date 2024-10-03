@@ -3,15 +3,19 @@ import {MainPage} from "./MainPage/MainPage";
 import {ProfilePage} from "./ProfilePage/ProfilePage";
 import {NotFoundPage} from "./NotFoundPage/NotFoundPage";
 import {DefinedLayout} from "./DefinedLayout/DefinedLayout";
+import {Suspense} from "react";
+import {PageLoader} from "./PageLoader/PageLoader";
 
 export default function AppRoutes() {
     return (
-        <Routes>
-            <Route path="/" element={<DefinedLayout />}>
-                <Route index element={<MainPage/>}/>
-                <Route path="/:id" element={<ProfilePage/>}/>
-            </Route>
-            <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+        <Suspense fallback={<PageLoader />}>
+            <Routes>
+                <Route path="/" element={<DefinedLayout />}>
+                    <Route index element={<MainPage/>}/>
+                    <Route path="/:id" element={<ProfilePage/>}/>
+                </Route>
+                <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+        </Suspense>
     );
 }

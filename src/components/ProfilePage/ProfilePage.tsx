@@ -1,12 +1,22 @@
 import cls from './ProfilePage.module.scss'
+import {LeftFormPart} from "../LeftFormPart/LeftFormPart";
+import {ProfileForm} from "../ProfileForm/ProfileForm";
+import {Link} from "react-router-dom";
 
 interface ProfilePageProps {
     className?: string;
 }
+
 export const ProfilePage = ({className}: ProfilePageProps) => {
     return (
         <div className={`${cls.ProfilePage} ${className || ''}`}>
-            Страница профиля
+            <Link to={'/'} className={cls.backLink}>
+                <img src="./arrow-left.png" alt="left-arrow"/>
+                <span
+                    className={cls.text}>Назад
+                </span>
+            </Link>
+            <ProfileForm/>
         </div>
     );
 };
