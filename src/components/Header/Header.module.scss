@@ -75,3 +75,14 @@
     color: var(--color2);
   }
 }
+
+@media (max-width:375px){
+  .Header {
+    height: 50px;
+  }
+
+  .wrapper {
+    max-width: 343px;
+    display: flex;
+  }
+}

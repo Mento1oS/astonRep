@@ -9,6 +9,7 @@ type InitialState = {
     dummies: Map<number, User>;
     currentUser: User;
     hidden: Set<number>;
+    popupVisible: boolean;
 };
 
 const initialState: InitialState = {
@@ -20,6 +21,7 @@ const initialState: InitialState = {
     currentUser: {
         id: NaN,
         name: '',
+        username: '',
         email: '',
         address: {
             street: '',
@@ -40,6 +42,7 @@ const initialState: InitialState = {
         }
     },
     hidden: new Set(),
+    popupVisible: false
 };
 const usersSlice = createSlice({
     name: 'users',
@@ -66,6 +69,9 @@ const usersSlice = createSlice({
         setHidden(state, action: PayloadAction<Set<number>>) {
             state.hidden = action.payload;
         },
+        setPopupVisible(state, action: PayloadAction<boolean>) {
+            state.popupVisible = action.payload;
+        },
     },
 });
 
@@ -76,7 +82,8 @@ export const {
     setIsArchivedDropDownOpen,
     setDummies,
     setCurrentUser,
-    setHidden
+    setHidden,
+    setPopupVisible
 } = usersSlice.actions;
 
 export default usersSlice.reducer;

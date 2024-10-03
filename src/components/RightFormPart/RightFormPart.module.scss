@@ -5,7 +5,7 @@
 }
 
 .wrapper {
-
+  position: relative;
 }
 
 .form {
@@ -35,9 +35,37 @@
   outline: none;
   border: none;
   margin-top: 15px;
+
   &:hover {
     color: var(--color1);
     background: var(--color6);
     border: var(--color1) 1px solid;
+  }
+
+  &:disabled {
+    color: var(--color6);
+    background: var(--color1);
+    border: none;
+  }
+}
+@media (max-width: 375px){
+  .RightFormPart {
+    max-width: 343px;
+  }
+
+  .wrapper {
+    position: relative;
+  }
+
+  .form {
+    padding: 30px;
+    gap: 18px;
+  }
+
+
+  .btn {
+    font-size: 14px;
+    width: 100%;
+    margin-top: 10px;
   }
 }

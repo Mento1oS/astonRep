@@ -52,15 +52,19 @@
   outline: none;
   border: none;
   background: none;
+
   img {
     cursor: pointer;
-    &:hover{
+
+    &:hover {
       filter: invert(47%) sepia(84%) saturate(438%) hue-rotate(144deg) brightness(96%) contrast(87%);
     }
-    &:active{
+
+    &:active {
       filter: invert(35%) sepia(0%) saturate(72%) hue-rotate(167deg) brightness(99%) contrast(97%);
     }
   }
+
   position: relative;
 }
 
@@ -105,4 +109,75 @@
 
 .open {
   display: block;
+}
+
+@media (max-width: 375px) {
+  .UserCard {
+    width: 162px;
+  }
+
+  .container {
+    padding: 16px;
+    display: flex;
+    width: 100%;
+    max-width: 343px;
+    flex-direction: column;
+    gap:10px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .picture {
+    img {
+      width: 130px;
+      height: var(--user-picture-size-h);
+    }
+  }
+
+  .right {
+    height: var(--user-picture-size-h);
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .user {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .top {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .name {
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .options {
+    img {
+      height: 10px;
+    }
+  }
+
+  .company {
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .city {
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .dropDown__container {
+    top: 20px;
+    right: -15px;
+  }
 }

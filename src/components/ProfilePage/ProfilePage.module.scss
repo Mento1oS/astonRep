@@ -17,3 +17,14 @@
     filter: invert(35%) sepia(0%) saturate(72%) hue-rotate(167deg) brightness(99%) contrast(97%);
   }
 }
+@media (max-width: 375px) {
+  .ProfilePage{
+    max-width: 343px;
+    margin: 0 auto;
+  }
+  .backLink{
+    gap: 20px;
+    padding-left: 10px;
+    font-size: 16px;
+  }
+}

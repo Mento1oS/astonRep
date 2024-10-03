@@ -12,14 +12,18 @@
     --user-picture-size-w: 112px;
     --user-picture-size-h: 120px;
     --dropDown-width: 200px;
-    --dropdown-fz: 16px
+    --dropdown-fz: 16px;
+    --popup-width: 310px;
+    --popup-height: 211px;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-a{
+
+a {
     text-decoration: none;
     color: inherit;
 }

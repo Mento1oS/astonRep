@@ -29,3 +29,26 @@
   font-weight: 600;
   text-align: left;
 }
+@media (max-width: 375px) {
+  .LeftFormPart{
+    width: 343px;
+  }
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+  }
+  .picture__block{
+    img{
+      width: 287px;
+      height: 187px;
+    }
+    margin-bottom: 20px;;
+  }
+  .metadata{
+    gap: 20px;
+  }
+  .header{
+    font-size: 14px;
+  }
+}

@@ -18,3 +18,17 @@
   justify-content: space-between;
   gap:32px;
 }
+
+@media (max-width: 375px) {
+  .ActiveUsers{
+    padding-top: 20px;
+    max-width: 343px;
+    margin: 0 auto;
+  }
+  .users{
+    margin: 0 auto;
+    max-width: 343px;
+    padding-top: 28px;
+    gap:15px;
+  }
+}

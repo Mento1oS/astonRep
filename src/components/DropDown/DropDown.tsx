@@ -15,7 +15,6 @@ export const DropDown = ({className, id, isArchived, index}: DropDownProps) => {
     const activeUsers = useAppSelector(state => state.users.users);
     const archivedUsers = useAppSelector(state => state.users.archivedUsers);
     const navigate = useNavigate();
-    const dummies = useAppSelector(state=>state.users.dummies);
     const hidden = useAppSelector(state=>state.users.hidden);
     const activate = () => {
         dispatch(setArchivedUsers([...archivedUsers].filter(elem => elem.id !== id)));
@@ -31,9 +30,6 @@ export const DropDown = ({className, id, isArchived, index}: DropDownProps) => {
     };
     const edit = () => {
         dispatch(setCurrentUser(activeUsers[index]));
-        const newMap = new Map(dummies);
-        newMap.set(id, activeUsers[index]);
-        dispatch(setDummies(newMap));
         navigate(`/${id}`);
     };
     return (

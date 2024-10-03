@@ -24,5 +24,15 @@
     }
   }
 }
+@media(max-width: 375px){
+  .wrapper{
+    width: 287px
+  }
+  .input{
+    font-size: 14px;
+    border-bottom: var(--color4) 1px solid;
+    padding-bottom: 10px;
+  }
+}
 
 
